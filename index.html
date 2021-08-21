@@ -76,24 +76,6 @@
       </ul>
   </body>
 </html>
-<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
-<script>
-  $('#menu > li').hover(function() {
-    // khi thẻ menu li bị hover thì drop down menu thuộc thẻ li đó sẽ trượt xuống(hiện)
-    $('.dropdown_menu', this).slideDown();
-  },function() {
-    // khi thẻ menu li bị out không hover nữa thì drop down menu thuộc thẻ li đó sẽ trượt lên(ẩn)
-    $('.dropdown_menu', this).slideUp();
-  });
-
-  $('.dropdown_menu > li').hover(function() {
-    // khi thẻ dropdown_menu li bị hover thì submenusubmenu thuộc thẻ li đó sẽ trượt xuống(hiện)
-    $('.submenu', this).slideDown();
-  },function() {
-    // khi thẻ dropdown_menu li bị hover thì submenusubmenu thuộc thẻ li đó sẽ trượt lên(ẩnẩn)
-    $('.submenu', this).slideUp();
-  });
-</script>
 <style>
 * {
   padding: 0;
@@ -124,6 +106,8 @@
   position: absolute;
   list-style: none;
   display: none;
+  top: 48px;
+  left: 0;
   width: 200px;
 }
 #menu > li:hover > a {
@@ -131,22 +115,21 @@
 }
 #menu > li:hover > ul.dropdown_menu {
   z-index: 100;
-}
-ul.dropdown_menu > li {
-  position: relative;
+  display: block;
 }
 ul.dropdown_menu > li > ul.submenu {
   position: absolute;
   display: none;
+  left: 200px;
   list-style: none;
   width: 200px;
-  left: 200px;
 }
 ul.dropdown_menu > li:hover > a {
   background-color: #5C5C5C !important;
 }
 ul.dropdown_menu > li:hover > ul.submenu {
   z-index: 100;
+  display: block;
 }
 ul.submenu > li:hover > a {
   background-color: #5C5C5C !important;
